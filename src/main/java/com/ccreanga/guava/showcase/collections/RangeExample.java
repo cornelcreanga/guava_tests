@@ -25,5 +25,10 @@ public class RangeExample {
         range = Range.closedOpen(0, 9);
         System.out.println(range);
 
+        Range<String> charRange = Range.closed("a", "r");
+        System.out.println(charRange);
+        System.out.println(charRange.encloses(Range.closed("b", "d")));
+
+
     }
 }
