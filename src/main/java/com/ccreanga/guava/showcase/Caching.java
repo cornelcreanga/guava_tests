@@ -26,7 +26,7 @@ public class Caching {
                                 return loadData(key);
                             }
                         });
-        //cache.put("key","value");
+        cache.put("key","value");
         System.out.println(cache.get("key"));
         cache.invalidateAll();
     }
