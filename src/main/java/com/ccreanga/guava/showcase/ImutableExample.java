@@ -11,6 +11,7 @@ import java.util.List;
  * -no null values!
  * -'smart' copy vs wrapping methods; structures optimized for readonly access;
  * order is preserved from construction time
+ * - there is an immutable correspondent for each regular collection
  */
 public class ImutableExample {
 
