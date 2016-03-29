@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-//
+//http://billmill.org/bloomfilter-tutorial/
 public class BloomFilterExample {
 
     public static void main(String[] args) {
@@ -38,7 +38,7 @@ public class BloomFilterExample {
 
         for(int i=0;i<100;i++){
             Person modifiedPerson = new Person(1,"dummy","sammy",(int)(100*Math.random()));
-            if (friends.mightContain(modifiedPerson)) {
+            if (friends.mightContain(modifiedPerson)) { //low probability - around 1%
                 System.out.println("found");
             };
 

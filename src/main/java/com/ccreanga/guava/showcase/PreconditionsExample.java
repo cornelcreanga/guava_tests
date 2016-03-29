@@ -1,33 +1,36 @@
 package com.ccreanga.guava.showcase;
 
 
+import com.google.common.base.Preconditions;
+
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
 //https://en.wikipedia.org/wiki/Precondition
+//https://en.wikipedia.org/wiki/Design_by_contract
 public class PreconditionsExample {
 
 
-    public void process(Map<String,BigDecimal> map) {
-        if( map == null ) {
-            throw new IllegalArgumentException( "Map must not be null" );
-        }
-        BigDecimal value = map.get("USD_TO_RON_CURRENCY");
-        if( value == null ) {
-            throw new IllegalArgumentException( "Map should contain the USD_TO_RON_CURRENCY" );
-        }
-        complexProcessing(value);
-
-    }
-
 //    public void process(Map<String,BigDecimal> map) {
-//        Preconditions.checkNotNull(map,"Map must not be null");
-//        BigDecimal value = Preconditions.checkNotNull(
-//                map.get("USD_TO_RON_CURRENCY"),
-//                "Map should contain the USD_TO_RON_CURRENCY");
+//        if( map == null ) {
+//            throw new IllegalArgumentException( "Map must not be null" );
+//        }
+//        BigDecimal value = map.get("USD_TO_RON_CURRENCY");
+//        if( value == null ) {
+//            throw new IllegalArgumentException( "Map should contain the USD_TO_RON_CURRENCY" );
+//        }
 //        complexProcessing(value);
+//
 //    }
+
+    public void process(Map<String,BigDecimal> map) {
+        Preconditions.checkNotNull(map,"Map must not be null");
+        BigDecimal value = Preconditions.checkNotNull(
+                map.get("USD_TO_RON_CURRENCY"),
+                "Map should contain the USD_TO_RON_CURRENCY");
+        complexProcessing(value);
+    }
 
     public void complexProcessing(BigDecimal value){
         System.out.println(value);
